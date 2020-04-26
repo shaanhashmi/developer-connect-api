@@ -6,6 +6,7 @@ const mongoose = require('./db/db');
 const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
 const posts = require('./routes/api/posts');
+const cors = require('cors');
 
 const app = express();
 const router = express.Router();
@@ -13,6 +14,7 @@ const router = express.Router();
 const port = process.env.PORT || 4000;
 
 // Body parser middleware
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
